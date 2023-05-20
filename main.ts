@@ -6,7 +6,9 @@ const app = new Application();
 
 const router = new Router();
 
-router.post("summarize", async (ctx) => {
+router.post("/summarize", async (ctx) => {
+  console.log("hi");
+
   const { text, OPENAI_TOKEN } = await ctx.request.body({ type: "json" }).value;
 
   const configuration = new Configuration({
